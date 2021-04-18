@@ -19,7 +19,7 @@ namespace CarPark.User.Controllers
 
         public IActionResult Index()
         {
-            var say_Hello_value = _localizer["Say_Hello"];          
+            var say_Hello_value = _localizer["Say_Hello"];
 
             return View();
         }

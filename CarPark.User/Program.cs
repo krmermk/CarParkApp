@@ -8,7 +8,7 @@ namespace CarPark.User
     {
         public static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration()         
+            Log.Logger = new LoggerConfiguration()
            .WriteTo.Seq("http://localhost:5341/")
            .CreateLogger();
 
@@ -16,7 +16,7 @@ namespace CarPark.User
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)                
+            Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

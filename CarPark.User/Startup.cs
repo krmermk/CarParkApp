@@ -1,16 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarPark.User
 {
@@ -42,14 +38,12 @@ namespace CarPark.User
                 opt.SupportedCultures = supportedCultures;
                 opt.SupportedUICultures = supportedCultures;
 
-
                 opt.RequestCultureProviders = new List<IRequestCultureProvider>
                 {
                     new QueryStringRequestCultureProvider(),
                     new CookieRequestCultureProvider(),
                     new AcceptLanguageHeaderRequestCultureProvider()
                 };
-
             });
         }
 
@@ -70,7 +64,6 @@ namespace CarPark.User
             app.UseStaticFiles();
 
             app.UseRouting();
-
 
             app.UseAuthorization();
 
